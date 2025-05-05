@@ -26,7 +26,8 @@ public class EnderecoIP {
     }
 
     public String getEnderecoIP() {
-        return enderecoCompleto;
+    	
+        return this.enderecoCompleto;
     }
 
     public String getIP() {

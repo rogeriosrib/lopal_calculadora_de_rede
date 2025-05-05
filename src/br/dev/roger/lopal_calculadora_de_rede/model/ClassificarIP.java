@@ -86,7 +86,7 @@ public class ClassificarIP {
         StringBuilder binario = new StringBuilder();
 
         for (int i = 0; i < octetos.length; i++) {
-            int valor = Integer.parseInt(octetos[i]); // ex: 255
+            int valor = Integer.parseInt(octetos[i]);
             String bin = String.format("%8s", Integer.toBinaryString(valor)).replace(' ', '0');
             binario.append(bin);
 
@@ -98,9 +98,9 @@ public class ClassificarIP {
         return binario.toString();
     }
     
-    public String CalcularHosts() {
+    public int CalcularHosts() {
         int hosts = Integer.parseInt(cidr);
-        int nHosts = (int) (Math.pow(2, (32 - hosts)) - 2);
-        return nHosts + ""; 
+        int numeroDeHosts = (int) (Math.pow(2, (32 - hosts)) - 2);
+        return numeroDeHosts; 
     }
 }
