@@ -56,7 +56,7 @@ public class TelaEnderecoIP {
 		limpar.setBounds(240, 85, 180, 30);
 
 		classificar = new JLabel();
-		classificar.setText("Classificacao : ");
+		classificar.setText("Classificação : ");
 		classificar.setBounds(30, 125, 390, 30);
 
 		mascaraDecimal = new JLabel();
@@ -76,7 +76,7 @@ public class TelaEnderecoIP {
 		tamanhoEscopo.setBounds(30, 205, 390, 30);
 		
 		escopoIP = new JLabel();
-		escopoIP.setText("escopo de IP's");
+		escopoIP.setText("escopo de IP's : ");
 		escopoIP.setBounds(30, 225, 390, 30);
 
 		broadcast = new JLabel();
@@ -103,6 +103,24 @@ public class TelaEnderecoIP {
 				redeInicial.setText("IP Inicial da rede : " + quantidade.redeInicial());
 				tamanhoEscopo.setText("Quantidade de hosts : " + classificador.CalcularHosts());
 				escopoIP.setText("escopo de IP's : " + quantidade.primeiroHost() + " ate o " + quantidade.ultimoHost(hostCalculado));
+				broadcast.setText("Broadcast : " + quantidade.broadcast(hostCalculado));
+			}
+		});
+		
+		limpar.addActionListener(new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				caixa.setText(null);
+				classificar.setText("Classificação : ");
+				mascaraDecimal.setText("Máscara Decimal : ");
+				mascaraBinaria.setText("Máscara Binária : ");
+				redeInicial.setText("IP Inicial da rede : ");
+				tamanhoEscopo.setText("Quantidade de hosts : ");
+				escopoIP.setText("escopo de IP's : ");
+				broadcast.setText("Broadcast : ");
+				
+				
 			}
 		});
 
